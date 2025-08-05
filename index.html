@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sensual Landing Page</title>
+  <title>Meet Singles In Your Area</title>
   <style>
     * {
       margin: 0;
@@ -11,95 +11,69 @@
       box-sizing: border-box;
     }
 
-    body, html {
+    html, body {
       height: 100%;
-      font-family: Arial, sans-serif;
+      width: 100%;
       overflow: hidden;
-      position: relative;
+      font-family: Arial, sans-serif;
     }
 
-    /* Background Video */
-    video#bgVideo {
-      position: absolute;
+    #bg-video {
+      position: fixed;
       top: 0;
       left: 0;
+      width: 100vw;
+      height: 100vh;
       object-fit: cover;
-      width: 100%;
-      height: 100%;
-      z-index: -2;
+      z-index: -1;
     }
 
-    /* Overlay Image */
     .overlay {
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('https://github.com/ge1972/dating.github.io/blob/be51e4a3b650d99e04dc489d2d35aede00f80eef/overlay-image.png') center center no-repeat;
-      background-size: contain;
-      opacity: 0.8;
-      z-index: -1;
+      width: 100vw;
+      height: 100vh;
+      object-fit: contain;
+      z-index: 1;
+      pointer-events: none;
     }
 
-    /* Fake Chat Box */
-    .chat-box {
+    .cta-button {
       position: absolute;
-      bottom: 20px;
-      left: 20px;
-      width: 250px;
-      background: rgba(0, 0, 0, 0.6);
-      color: #fff;
-      border-radius: 10px;
-      padding: 10px;
-      font-size: 14px;
-      animation: slideUp 1s ease-out;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #ff3366;
+      color: white;
+      padding: 15px 30px;
+      font-size: 20px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      z-index: 2;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
 
-    .chat-box::before {
-      content: "💬";
-      margin-right: 5px;
-    }
-
-    @keyframes slideUp {
-      from {
-        transform: translateY(20px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    @media screen and (max-width: 600px) {
-      .chat-box {
-        width: 90%;
-        left: 5%;
-        font-size: 12px;
-      }
+    .cta-button:hover {
+      background-color: #e6004c;
     }
   </style>
 </head>
 <body>
 
   <!-- Background Video -->
-  <video autoplay muted loop playsinline id="bgVideo">
-    <source src="https://raw.githubusercontent.com/ge1972/dating.github.io/main/compressed-video.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
+  <video autoplay loop muted playsinline id="bg-video">
+    <source src="compressed-video.mp4" type="video/mp4" />
+    Your browser does not support HTML5 video.
   </video>
 
-  <!-- Overlay Image -->
-  <div class="overlay"></div>
+  <!-- Image Overlay -->
+  <img src="compressed-image.png" class="overlay" />
 
-  <!-- Fake Chat Box -->
-  <div class="chat-box">
-    Hey there 👋 Wanna have some fun tonight? Click here 😘
-  </div>
+  <!-- Call-To-Action Button -->
+  <a href="YOUR-LINK-HERE" class="cta-button">Join Now</a>
 
 </body>
 </html>
-
-
-
-
